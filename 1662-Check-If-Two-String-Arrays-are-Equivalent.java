@@ -8,9 +8,6 @@ class Solution {
         for (String str : word2) {
             wordB.append(str);
         }
-        String str1 = wordA.toString();
-        String str2 = wordB.toString();
-        // check if they have different length
-        return str1.equals(str2);
+        return wordA.toString().equals(wordB.toString());
     }
 }
