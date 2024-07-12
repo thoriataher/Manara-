@@ -1,5 +1,9 @@
 class Solution {
     public boolean isPalindrome(String s) {
+        //if the s is Empty
+        if(s.isEmpty()){
+            return false;
+        }
         //removing all non-alphanumeric characters
         String str = s.replaceAll(\[^a-zA-Z0-9]\, \\);
         str = str.toLowerCase();
