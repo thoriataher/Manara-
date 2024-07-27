@@ -11,20 +11,21 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        // EdgeCase: where head is null or I have one element
-        if (head == null || head.next == null)
-            return false;
+        //use Floyd warshall algorithm--> in a nutshell I will have slow and fast pointer and if they meet means
+        //that I have a loop 
+      ListNode slow = head;
+      ListNode fast = head;
 
-        ListNode slow = head;
-        ListNode fast = head.next;
-
-        while (slow != fast) {
-            if (fast == null || fast.next == null) {
-                return false;
-            }
-            slow = slow.next;
-            fast = fast.next.next;
+      //check if there's any null values, I will return false 
+      //as long as it's a cycle means there's no null values
+      while(slow!=null && fast!=null && fast.next!=null){
+        slow = slow.next;
+        fast = fast.next.next;
+        //if the two pointers meet, I found a loop
+        if(slow == fast){
+            return true;
         }
-        return true;
+      }  
+      return false;
     }
 }
