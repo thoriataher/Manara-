@@ -15,10 +15,7 @@ public class Solution {
         // pointer and if they meet means
         // that I have a loop
         ListNode slow = head;
-        if (slow == null)
-            return false;
-
-        ListNode fast = head.next;
+        ListNode fast = head;
         // check if there's any null values, I will return false
         // as long as it's a cycle means there's no null values
         while (slow != null && fast != null && fast.next != null) {
